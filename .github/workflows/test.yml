@@ -1,0 +1,27 @@
+name: Test formula
+
+on:
+  push:
+    paths: ['Formula/**', 'scripts/**', '.github/workflows/**']
+  pull_request:
+    paths: ['Formula/**', 'scripts/**', '.github/workflows/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  install:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: Homebrew/actions/setup-homebrew@master
+      - name: Install and test
+        run: |
+          brew tap zanza00/tap "$GITHUB_WORKSPACE"
+          brew install zanza00/tap/source-fetch
+          brew test zanza00/tap/source-fetch
