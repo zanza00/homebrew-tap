@@ -17,21 +17,39 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
-        with:
-          stable: true
       - uses: actions/checkout@v7
       - name: Generate formula from the latest stable release
+        id: formula
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 scripts/update-source-fetch.py
+          if git diff --quiet -- Formula/source-fetch.rb; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Validate formula syntax
+        run: ruby -c Formula/source-fetch.rb
+      - uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
+        if: steps.formula.outputs.changed == 'true'
+        with:
+          stable: true
+      # Homebrew setup replaces the checkout; restore push credentials and regenerate.
+      - uses: actions/checkout@v7
+        if: steps.formula.outputs.changed == 'true'
+      - name: Regenerate formula in the Homebrew checkout
+        if: steps.formula.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/update-source-fetch.py
-      - name: Validate formula syntax
-        run: ruby -c Formula/source-fetch.rb
       - name: Test formula before publishing
+        if: steps.formula.outputs.changed == 'true'
         run: |
           brew install zanza00/tap/source-fetch
           brew test zanza00/tap/source-fetch
       - name: Commit formula update
+        if: steps.formula.outputs.changed == 'true'
         run: |
           if git diff --quiet -- Formula/source-fetch.rb; then
             exit 0
