@@ -24,6 +24,12 @@ jobs:
         run: python3 scripts/update-source-fetch.py
       - name: Validate formula syntax
         run: ruby -c Formula/source-fetch.rb
+      - uses: Homebrew/actions/setup-homebrew@master
+      - name: Test formula before publishing
+        run: |
+          brew tap zanza00/tap "$GITHUB_WORKSPACE"
+          brew install zanza00/tap/source-fetch
+          brew test zanza00/tap/source-fetch
       - name: Commit formula update
         run: |
           if git diff --quiet -- Formula/source-fetch.rb; then
