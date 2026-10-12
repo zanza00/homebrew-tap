@@ -51,7 +51,7 @@ def render(release, checksums):
         "  def install", '    bin.install "source-fetch"', "  end", "",
         "  test do",
         '    assert_equal version.to_s, shell_output("#{bin}/source-fetch version").strip',
-        '    assert_match "peek", shell_output("#{bin}/source-fetch --help")',
+        '    assert_match "peek", shell_output("#{bin}/source-fetch --help 2>&1")',
         "  end", "end", "",
     ])
     return "\n".join(lines)
