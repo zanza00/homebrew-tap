@@ -17,14 +17,9 @@ The formula installs prebuilt binaries from
 [source-fetch releases](https://github.com/zanza00/source-fetch/releases),
 verifies their SHA-256 checksums, and includes the Git dependency.
 
-The update workflow checks the latest stable release every hour. GitHub may
-delay scheduled runs. To update immediately, run **Update source-fetch** from
-the Actions tab, or use:
+GoReleaser updates the formula when source-fetch publishes a release. The
+release workflow uses the `HOMEBREW_TAP_TOKEN` secret configured in the
+source-fetch repository, with Contents read/write access to this tap.
 
-```sh
-gh workflow run update.yml --repo zanza00/homebrew-tap
-```
-
-It uses this repository's `GITHUB_TOKEN`; no additional secret is needed.
-Only complete stable releases with all four supported archives and their
-checksums can update the formula.
+Installation tests run on Linux and both Intel and ARM64 macOS when the formula
+changes. There is no scheduled polling.
