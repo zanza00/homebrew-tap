@@ -1,28 +1,28 @@
 class SourceFetch < Formula
   desc "Fetch dependency source code on demand into a local cache"
   homepage "https://github.com/zanza00/source-fetch"
-  version "0.4.2"
+  version "0.4.3"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/zanza00/source-fetch/releases/download/v0.4.2/source-fetch_0.4.2_darwin_arm64.tar.gz"
-      sha256 "4fe29ceb93c6d87e775e12bd4fb60e4a885988a2e8f0d9c11e835bf342edbdb1"
+      url "https://github.com/zanza00/source-fetch/releases/download/v0.4.3/source-fetch_0.4.3_darwin_arm64.tar.gz"
+      sha256 "f5a175adc1fbcd8beda09a8e0fdc1382bbafe1571f3cf9006ba722178ffcca5e"
     end
     on_intel do
-      url "https://github.com/zanza00/source-fetch/releases/download/v0.4.2/source-fetch_0.4.2_darwin_amd64.tar.gz"
-      sha256 "917b575aef00ca7668c144e3621544cda5ff494676a23d98dbac1fedf3ef98d5"
+      url "https://github.com/zanza00/source-fetch/releases/download/v0.4.3/source-fetch_0.4.3_darwin_amd64.tar.gz"
+      sha256 "818627bab7b1dd5d41191613f0221fe6a4cd7e82a572c6c972eafe4e93742995"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/zanza00/source-fetch/releases/download/v0.4.2/source-fetch_0.4.2_linux_arm64.tar.gz"
-      sha256 "74bf27368c26fb02afcfc009aac0afb3a6edda4314fb5b11644a8f694becf5e9"
+      url "https://github.com/zanza00/source-fetch/releases/download/v0.4.3/source-fetch_0.4.3_linux_arm64.tar.gz"
+      sha256 "572554331fe66ea0a51a52f4afc9165009e62bb2cd8891b585dc822d5043929a"
     end
     on_intel do
-      url "https://github.com/zanza00/source-fetch/releases/download/v0.4.2/source-fetch_0.4.2_linux_amd64.tar.gz"
-      sha256 "5bc3885edcb88e083cd8b205ae066c91d223f86be8f24d4b699cdb1344b76f25"
+      url "https://github.com/zanza00/source-fetch/releases/download/v0.4.3/source-fetch_0.4.3_linux_amd64.tar.gz"
+      sha256 "990ce792d2c1fced4ce676270e60bc6525a7334977cb94ce117d38977a7065c3"
     end
   end
 
