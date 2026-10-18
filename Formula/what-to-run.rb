@@ -1,28 +1,28 @@
 class WhatToRun < Formula
   desc "Task picker for the commands you can never remember in a repository"
   homepage "https://github.com/zanza00/what-to-run"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/zanza00/what-to-run/releases/download/v0.1.0/what-to-run_0.1.0_darwin_arm64.tar.gz"
-      sha256 "6e1af086a64a7db701154f392ba685242d2950b71941a1938c5fbe5441c00e74"
+      url "https://github.com/zanza00/what-to-run/releases/download/v0.1.1/what-to-run_0.1.1_darwin_arm64.tar.gz"
+      sha256 "107339fd7715ba12e7389617cb7a6590ca360ddde4e6fccf0e369bb33678a218"
     end
     on_intel do
-      url "https://github.com/zanza00/what-to-run/releases/download/v0.1.0/what-to-run_0.1.0_darwin_amd64.tar.gz"
-      sha256 "a344c1de6221f6a381329bcbf6ba87275cad613fb54e1f0de97f3e507ca0dfa5"
+      url "https://github.com/zanza00/what-to-run/releases/download/v0.1.1/what-to-run_0.1.1_darwin_amd64.tar.gz"
+      sha256 "352dc763ed0e3b4afe28c89ada5866f22edd0b87a7d13f58b9ece0103d4885ba"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/zanza00/what-to-run/releases/download/v0.1.0/what-to-run_0.1.0_linux_arm64.tar.gz"
-      sha256 "6523140e13e7176f4ed79ab07744ebf2ad7015c992ece8f7e0b0c1aacd88dedc"
+      url "https://github.com/zanza00/what-to-run/releases/download/v0.1.1/what-to-run_0.1.1_linux_arm64.tar.gz"
+      sha256 "575f542e869c2922a99dd3e3781448c03de920348d807a636a03f25d5e58cd6a"
     end
     on_intel do
-      url "https://github.com/zanza00/what-to-run/releases/download/v0.1.0/what-to-run_0.1.0_linux_amd64.tar.gz"
-      sha256 "922f12afa7e88e7f267d50c100466c35e9422fd946aa606df9b316979fbdb30d"
+      url "https://github.com/zanza00/what-to-run/releases/download/v0.1.1/what-to-run_0.1.1_linux_amd64.tar.gz"
+      sha256 "1ca58245b6a4631e0b66853fc2067bb5e588fa6768973bb7b98e5db49f6cd6c2"
     end
   end
 
