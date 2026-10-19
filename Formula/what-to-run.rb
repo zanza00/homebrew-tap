@@ -7,22 +7,22 @@ class WhatToRun < Formula
   on_macos do
     on_arm do
       url "https://github.com/zanza00/what-to-run/releases/download/v0.3.1/what-to-run_0.3.1_darwin_arm64.tar.gz"
-      sha256 "f8b0d81a38fcc7c0abdccc0408047e4c408e1ce6615f88d4cc5652bafda7682c"
+      sha256 "2b28e5f09052bb4dd02afb085215736fb9274bf501300d01bafcaf585a1e3a83"
     end
     on_intel do
       url "https://github.com/zanza00/what-to-run/releases/download/v0.3.1/what-to-run_0.3.1_darwin_amd64.tar.gz"
-      sha256 "a0afd909677c96c50c42dde508b1ca9833a57096b5f65822ab924277cf08dfde"
+      sha256 "531932fe4cc4ce3113d751d4f73b32dcca9bdf6dc2a609ffceb502140c5c2152"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/zanza00/what-to-run/releases/download/v0.3.1/what-to-run_0.3.1_linux_arm64.tar.gz"
-      sha256 "e6ea45567a80290c50cb1fdfe885064d0038d8442e2ad9e20bd792ee8187c5a2"
+      sha256 "8ee9b6a7329c3639304c74da69495062956de144414542a4fb1ac95d0f5d8771"
     end
     on_intel do
       url "https://github.com/zanza00/what-to-run/releases/download/v0.3.1/what-to-run_0.3.1_linux_amd64.tar.gz"
-      sha256 "7788501088c8b6a7befdd3ba3516da26c382ef8a5f33904b9e320227039816a0"
+      sha256 "273ef81d3f0665132dc28018216d59b332ab271ddd48dc0e451787ccae1b0fb8"
     end
   end
 
