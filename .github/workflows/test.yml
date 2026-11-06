@@ -13,8 +13,10 @@ permissions:
 jobs:
   install:
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest, macos-15-intel]
+        formula: [source-fetch, skp]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
     steps:
@@ -23,5 +25,5 @@ jobs:
           stable: true
       - name: Install and test
         run: |
-          brew install zanza00/tap/source-fetch
-          brew test zanza00/tap/source-fetch
+          brew install "zanza00/tap/${{ matrix.formula }}"
+          brew test "zanza00/tap/${{ matrix.formula }}"

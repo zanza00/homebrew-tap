@@ -23,3 +23,24 @@ source-fetch repository, with Contents read/write access to this tap.
 
 Installation tests run on Linux and both Intel and ARM64 macOS when the formula
 changes. There is no scheduled polling.
+
+## skp
+
+Install skp on macOS or Linux (Intel or ARM64):
+
+```sh
+brew install zanza00/tap/skp
+```
+
+Upgrade to the latest packaged release:
+
+```sh
+brew update
+brew upgrade skp
+```
+
+The formula installs prebuilt binaries from
+[skp releases](https://github.com/zanza00/skp/releases), verifies their SHA-256
+checksums, and includes the Git dependency. GoReleaser updates the formula when
+skp publishes a release, using the `HOMEBREW_TAP_TOKEN` secret configured in the
+skp repository.
