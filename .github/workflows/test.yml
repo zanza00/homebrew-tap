@@ -17,6 +17,11 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest, macos-15-intel]
         formula: [source-fetch, skp]
+        exclude:
+          # Homebrew no longer provides Intel bottles for source-fetch's Git
+          # dependency. skp uses the system Git on macOS instead.
+          - os: macos-15-intel
+            formula: source-fetch
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
     steps:

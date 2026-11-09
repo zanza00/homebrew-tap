@@ -24,9 +24,9 @@ class Skp < Formula
       url "https://github.com/zanza00/skp/releases/download/v0.1.0/skp_0.1.0_linux_amd64.tar.gz"
       sha256 "38fa5bffe4c2f2fbd05840796280aa5b04b9aa5408435fe218ae3c2b6475deb6"
     end
-  end
 
-  depends_on "git"
+    depends_on "git"
+  end
 
   def install
     bin.install "skp"

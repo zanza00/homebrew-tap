@@ -21,8 +21,8 @@ GoReleaser updates the formula when source-fetch publishes a release. The
 release workflow uses the `HOMEBREW_TAP_TOKEN` secret configured in the
 source-fetch repository, with Contents read/write access to this tap.
 
-Installation tests run on Linux and both Intel and ARM64 macOS when the formula
-changes. There is no scheduled polling.
+Installation tests run on Linux and macOS ARM64; skp is also tested on macOS
+Intel. There is no scheduled polling.
 
 ## skp
 
@@ -40,7 +40,7 @@ brew upgrade skp
 ```
 
 The formula installs prebuilt binaries from
-[skp releases](https://github.com/zanza00/skp/releases), verifies their SHA-256
-checksums, and includes the Git dependency. GoReleaser updates the formula when
-skp publishes a release, using the `HOMEBREW_TAP_TOKEN` secret configured in the
-skp repository.
+[skp releases](https://github.com/zanza00/skp/releases) and verifies their
+SHA-256 checksums. It declares the Git dependency only on Linux; macOS uses the
+system Git. GoReleaser updates the formula when skp publishes a release, using
+the `HOMEBREW_TAP_TOKEN` secret configured in the skp repository.
